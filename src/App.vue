@@ -6,6 +6,18 @@
   <router-view />
 </template>
 
+<script lang="ts">
+import { defineComponent } from 'vue';
+
+export default defineComponent({
+  mounted() {
+    this.$router.beforeEach((route) => {
+      console.log('route:', route.path);
+    });
+  },
+});
+</script>
+
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
